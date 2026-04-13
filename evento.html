@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evento | CIDEX</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+
+        :root {
+            /* Futuristic Dark/Cyan Palette based on the image */
+            --bg-deep: #021217;
+            --bg-card: #062329;
+            --cyan-main: #18d2cc;
+            --cyan-dark: #0b5e61;
+            --cyan-soft: rgba(24, 210, 204, 0.12);
+            --text-main: #e2f1f4;
+            --text-muted: #8eb9bc;
+            --white: #ffffff;
+            --border: #13464b;
+            --shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 8px;
+            --max-width: 1000px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: "Inter", "Segoe UI", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            color: var(--text-main);
+            background: var(--bg-deep); /* Dark background */
+            line-height: 1.65;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(var(--max-width), calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--cyan-main);
+            margin-bottom: 0.8rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.92);
+            margin-bottom: 2rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+            color: var(--cyan-main);
+        }
+
+        .hero-evento {
+            padding: 5rem 0 7rem;
+            background: linear-gradient(135deg, #021a22 0%, #063e46 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-evento::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(circle at 80% 20%, rgba(24,210,204,0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-evento h1 {
+            font-size: clamp(2.2rem, 3.5vw, 3.8rem);
+            line-height: 1.1;
+            margin: 0 0 1.5rem;
+            max-width: 900px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .event-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(24, 210, 204, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .meta-icon {
+            font-size: 1.2rem;
+        }
+
+        .content-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            padding: 3rem;
+            margin-top: -5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .agenda-section {
+            margin-bottom: 3.5rem;
+        }
+
+        .agenda-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .agenda-section h2 {
+            font-size: 1.7rem;
+            color: var(--cyan-main);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+            text-shadow: 0 0 10px rgba(24,210,204,0.3);
+        }
+
+        .agenda-item {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            align-items: start;
+        }
+
+        @media (max-width: 600px) {
+            .agenda-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+        }
+
+        .item-time {
+            font-weight: 700;
+            color: var(--cyan-main);
+            background: var(--cyan-soft);
+            padding: 0.5rem 0.8rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            text-align: center;
+            display: inline-block;
+            border: 1px solid rgba(24, 210, 204, 0.2);
+        }
+
+        .item-content h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.25rem;
+            color: var(--white);
+        }
+
+        .item-content p {
+            margin: 0 0 0.5rem;
+            color: var(--text-muted);
+        }
+        
+        .item-content strong {
+            color: var(--text-main);
+        }
+
+        .speaker-info {
+            background: rgba(0,0,0,0.2);
+            border-left: 4px solid var(--cyan-main);
+            padding: 1rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin-top: 1rem;
+        }
+
+        .speaker-info strong {
+            display: block;
+            color: var(--cyan-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .tag-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0 0;
+        }
+
+        .tag-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-muted);
+        }
+
+        .tag-list li::before {
+            content: "•";
+            color: var(--cyan-main);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <section class="hero-evento">
+        <div class="container">
+            <a href="index.html" class="back-link">← Volver al inicio</a>
+
+            <div class="eyebrow" style="color: rgba(255,255,255,0.8);">Próximo Evento CIDEX</div>
+            <!-- Título genérico sugerido a reemplazar en futuros eventos -->
+            <h1>Encuentro de Semilleros de Investigación Aplicado en Ciencia de Datos – CIDEX 2026</h1>
+
+            <div class="event-meta">
+                <!-- Variables genéricas a cambiar por evento -->
+                <div class="meta-item">
+                    <span class="meta-icon">📅</span>
+                    <span>17 de abril de 2026</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-icon">🕒</span>
+                    <span>9:00 a.m. – 4:00 p.m.</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-icon">📍</span>
+                    <span>Universidad Externado de Colombia – Edificios H e I</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="content-card">
+                
+                <!-- SECCIÓN 1: CONFERENCISTAS PRINCIPALES -->
+                <div class="agenda-section">
+                    <h2>Conferencistas Principales</h2>
+                    
+                    <div class="agenda-item">
+                        <div class="item-time">9:00 a.m. - 10:00 a.m.</div>
+                        <div class="item-content">
+                            <h3>Conferencia: "Teleodynamic Learning: A New Paradigm for Interpretable AI"</h3>
+                            <p><strong>Ubicación:</strong> Auditorio 3 – Edificio I</p>
+                            
+                            <div class="speaker-info">
+                                <strong>Enrique ter Horst, PhD</strong>
+                                <p>PhD en Bayesian Statistics (Duke University), ex Credit Suisse y Morgan Stanley, consultor para ECB y Eurostat.</p>
+                                <br>
+                                <strong>Juan Zambrano</strong>
+                                <p>CTO y Machine Learning Researcher, especialista en infraestructura multi-cloud, IA generativa y redes neuronales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 2: PANEL DE PROFESORES -->
+                <div class="agenda-section">
+                    <h2>Panel de Profesores y Líderes de Semilleros</h2>
+                    
+                    <div class="agenda-item">
+                        <div class="item-time">10:00 a.m. - 11:30 a.m.</div>
+                        <div class="item-content">
+                            <h3>Presentación de Semilleros de Investigación</h3>
+                            <p><strong>Ubicación:</strong> Auditorio 3 – Edificio I</p>
+                            <p>Participantes del panel y sus respectivos enfoques investigativos:</p>
+                            <ul class="tag-list">
+                                <li>Diana Pulido – Círculos Matemáticos</li>
+                                <li>Juan (Coordinador) – Aprendizaje por Refuerzo</li>
+                                <li>Julián (Investigador Principal) – Aprendizaje por Refuerzo</li>
+                                <li>Germán Combariza – Teoría de Grafos</li>
+                                <li>Arley Torres – Co-investigador</li>
+                                <li>David Franco – Co-investigador</li>
+                                <li>Alber Ferney Montenegro Vargas – NeuroMinds</li>
+                                <li>Fernando Torres – Procesamiento de Imágenes Digitales</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 3: POSTERS -->
+                <div class="agenda-section">
+                    <h2>Sesión de Posters</h2>
+                    
+                    <div class="agenda-item">
+                        <div class="item-time">11:30 a.m. - 1:00 p.m.</div>
+                        <div class="item-content">
+                            <h3>Exposición de proyectos estudiantiles</h3>
+                            <p><strong>Ubicación:</strong> Pasillos - Edificio I</p>
+                            <p>Muestra abierta de los pósters académicos elaborados por nuestros estudiantes de los distintos semilleros de investigación, aplicando técnicas de Ciencia de Datos a casos de estudio reales.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 4: TESIS -->
+                <div class="agenda-section">
+                    <h2>Presentaciones de tesis (Salón I-604)</h2>
+                    
+                    <div class="agenda-item">
+                        <div class="item-time">2:10 p.m. - 4:35 p.m.</div>
+                        <div class="item-content">
+                            <h3>Exposición de trabajos de grado</h3>
+                            <p><strong>Ubicación:</strong> Salón I-604</p>
+                            <ul class="tag-list">
+                                <li><strong>14:10 – 14:30:</strong> Validación y calidad del dato – Vanegas, Marín, Galindo</li>
+                                <li><strong>14:35 – 14:55:</strong> Violencia sexual en Colombia – Perdomo, Riveros</li>
+                                <li><strong>15:00 – 15:20:</strong> DataFascination Tech SAS – Yáñez, Pinzón</li>
+                                <li><strong>15:25 – 15:45:</strong> UHI en New York – Penagos, Rodríguez</li>
+                                <li><strong>15:50 – 16:10:</strong> Ondas cerebrales y redes neuronales – Santana</li>
+                                <li><strong>16:15 – 16:35:</strong> Modelo híbrido de riesgo académico – Niño</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 5: PONENCIAS APLICADAS -->
+                <div class="agenda-section">
+                    <h2>Ponencias de investigación aplicada (Salón I-606)</h2>
+                    
+                    <div class="agenda-item">
+                        <div class="item-time">2:10 p.m. - 4:55 p.m.</div>
+                        <div class="item-content">
+                            <h3>Presentación de avances de investigación</h3>
+                            <p><strong>Ubicación:</strong> Salón I-606</p>
+                            <ul class="tag-list">
+                                <li><strong>14:10 – 14:30:</strong> Yeiver Sanabria – Segmentación de cerámica precolombina</li>
+                                <li><strong>14:35 – 14:55:</strong> Salomé Castro – Descubrimiento de moléculas (Dengue)</li>
+                                <li><strong>15:00 – 15:20:</strong> Juan David Sierra – Caracterización de cerámica</li>
+                                <li><strong>15:25 – 15:45:</strong> Brayan Herrera – Aprendizaje por refuerzo en trading</li>
+                                <li><strong>15:50 – 16:10:</strong> Pablo Reyes – Envejecimiento facial con difusión</li>
+                                <li><strong>16:15 – 16:35:</strong> Angie Donato – IA en búsqueda humanitaria</li>
+                                <li><strong>16:35 – 16:55:</strong> Hainer Mejía – Reconstrucción facial 3D con IA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
