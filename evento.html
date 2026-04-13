@@ -7,7 +7,6 @@
     <title>Evento | CIDEX</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
-
         :root {
             /* Futuristic Dark/Cyan Palette based on the image */
             --bg-deep: #021217;
@@ -38,7 +37,8 @@
         body {
             margin: 0;
             color: var(--text-main);
-            background: var(--bg-deep); /* Dark background */
+            background: var(--bg-deep);
+            /* Dark background */
             line-height: 1.65;
         }
 
@@ -93,12 +93,15 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero-evento::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(circle at 80% 20%, rgba(24,210,204,0.15) 0%, transparent 50%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 80% 20%, rgba(24, 210, 204, 0.15) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -107,7 +110,7 @@
             line-height: 1.1;
             margin: 0 0 1.5rem;
             max-width: 900px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .event-meta {
@@ -126,7 +129,7 @@
             padding: 0.75rem 1.25rem;
             border-radius: var(--radius-sm);
             border: 1px solid rgba(24, 210, 204, 0.2);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(5px);
         }
 
@@ -160,7 +163,7 @@
             margin-bottom: 1.5rem;
             padding-bottom: 0.75rem;
             border-bottom: 1px solid var(--border);
-            text-shadow: 0 0 10px rgba(24,210,204,0.3);
+            text-shadow: 0 0 10px rgba(24, 210, 204, 0.3);
         }
 
         .agenda-item {
@@ -200,13 +203,13 @@
             margin: 0 0 0.5rem;
             color: var(--text-muted);
         }
-        
+
         .item-content strong {
             color: var(--text-main);
         }
 
         .speaker-info {
-            background: rgba(0,0,0,0.2);
+            background: rgba(0, 0, 0, 0.2);
             border-left: 4px solid var(--cyan-main);
             padding: 1rem;
             border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
@@ -241,7 +244,6 @@
             left: 0;
             top: -2px;
         }
-
     </style>
 </head>
 
@@ -263,7 +265,7 @@
                 </div>
                 <div class="meta-item">
                     <span class="meta-icon">🕒</span>
-                    <span>9:00 a.m. – 4:00 p.m.</span>
+                    <span>9:00 a.m. – 6:00 p.m.</span>
                 </div>
                 <div class="meta-item">
                     <span class="meta-icon">📍</span>
@@ -276,23 +278,25 @@
     <section class="section" style="padding-top: 0;">
         <div class="container">
             <div class="content-card">
-                
+
                 <!-- SECCIÓN 1: CONFERENCISTAS PRINCIPALES -->
                 <div class="agenda-section">
                     <h2>Conferencistas Principales</h2>
-                    
+
                     <div class="agenda-item">
                         <div class="item-time">9:00 a.m. - 10:00 a.m.</div>
                         <div class="item-content">
                             <h3>Conferencia: "Teleodynamic Learning: A New Paradigm for Interpretable AI"</h3>
                             <p><strong>Ubicación:</strong> Auditorio 3 – Edificio I</p>
-                            
+
                             <div class="speaker-info">
                                 <strong>Enrique ter Horst, PhD</strong>
-                                <p>PhD en Bayesian Statistics (Duke University), ex Credit Suisse y Morgan Stanley, consultor para ECB y Eurostat.</p>
+                                <p>PhD en Bayesian Statistics (Duke University), ex Credit Suisse y Morgan Stanley,
+                                    consultor para ECB y Eurostat.</p>
                                 <br>
                                 <strong>Juan Zambrano</strong>
-                                <p>CTO y Machine Learning Researcher, especialista en infraestructura multi-cloud, IA generativa y redes neuronales.</p>
+                                <p>CTO y Machine Learning Researcher, especialista en infraestructura multi-cloud, IA
+                                    generativa y redes neuronales.</p>
                             </div>
                         </div>
                     </div>
@@ -301,7 +305,7 @@
                 <!-- SECCIÓN 2: PANEL DE PROFESORES -->
                 <div class="agenda-section">
                     <h2>Panel de Profesores y Líderes de Semilleros</h2>
-                    
+
                     <div class="agenda-item">
                         <div class="item-time">10:00 a.m. - 11:30 a.m.</div>
                         <div class="item-content">
@@ -325,13 +329,15 @@
                 <!-- SECCIÓN 3: POSTERS -->
                 <div class="agenda-section">
                     <h2>Sesión de Posters</h2>
-                    
+
                     <div class="agenda-item">
                         <div class="item-time">11:30 a.m. - 1:00 p.m.</div>
                         <div class="item-content">
                             <h3>Exposición de proyectos estudiantiles</h3>
                             <p><strong>Ubicación:</strong> Pasillos - Edificio I</p>
-                            <p>Muestra abierta de los pósters académicos elaborados por nuestros estudiantes de los distintos semilleros de investigación, aplicando técnicas de Ciencia de Datos a casos de estudio reales.</p>
+                            <p>Muestra abierta de los pósters académicos elaborados por nuestros estudiantes de los
+                                distintos semilleros de investigación, aplicando técnicas de Ciencia de Datos a casos de
+                                estudio reales.</p>
                         </div>
                     </div>
                 </div>
@@ -339,19 +345,29 @@
                 <!-- SECCIÓN 4: TESIS -->
                 <div class="agenda-section">
                     <h2>Presentaciones de tesis (Salón I-604)</h2>
-                    
+
                     <div class="agenda-item">
                         <div class="item-time">2:10 p.m. - 4:35 p.m.</div>
                         <div class="item-content">
                             <h3>Exposición de trabajos de grado</h3>
                             <p><strong>Ubicación:</strong> Salón I-604</p>
                             <ul class="tag-list">
-                                <li><strong>14:10 – 14:30:</strong> Validación y calidad del dato – Vanegas, Marín, Galindo</li>
-                                <li><strong>14:35 – 14:55:</strong> Violencia sexual en Colombia – Perdomo, Riveros</li>
-                                <li><strong>15:00 – 15:20:</strong> DataFascination Tech SAS – Yáñez, Pinzón</li>
-                                <li><strong>15:25 – 15:45:</strong> UHI en New York – Penagos, Rodríguez</li>
-                                <li><strong>15:50 – 16:10:</strong> Ondas cerebrales y redes neuronales – Santana</li>
-                                <li><strong>16:15 – 16:35:</strong> Modelo híbrido de riesgo académico – Niño</li>
+                                <li><strong>14:10 – 14:30:</strong> "Validación y Calidad del Dato en el Perfil de
+                                    morbimortalidad hospitalaria" – Vanegas Idarraga Yotsan Alejandro; Marin Ochoa Luisa
+                                    Gabriela; Galindo Ordoñez Diego Felipe</li>
+                                <li><strong>14:35 – 14:55:</strong> Violencia sexual en Colombia: caracterización de los
+                                    factores clave que determinaron los patrones durante el período 2015-2024 – Perdomo
+                                    Dueñas Saudith; Riveros Vargas Amy Gabriela</li>
+                                <li><strong>15:00 – 15:20:</strong> Datascination Tech SAS – Yañez Villarraga Andres
+                                    Felipe; Pinzón Cruz Ángela Valeria</li>
+                                <li><strong>15:25 – 15:45:</strong> Modelado del Fenómeno de Isla de Calor Urbana (UHI)
+                                    en New York usando Machine Learning – Penagos Galvis Helen Stefany; Rodríguez Niño
+                                    Valentina</li>
+                                <li><strong>15:50 – 16:10:</strong> Influencia de las ondas cerebrales en el aprendizaje
+                                    de redes neuronales artificiales – Santana Rodríguez Nicole Valentina</li>
+                                <li><strong>16:15 – 16:35:</strong> Diseño y validación de un modelo híbrido de
+                                    diagnóstico cognitivo y predicción de riesgo académico en Cálculo 1 – Juan Pablo
+                                    Niño</li>
                             </ul>
                         </div>
                     </div>
@@ -360,20 +376,29 @@
                 <!-- SECCIÓN 5: PONENCIAS APLICADAS -->
                 <div class="agenda-section">
                     <h2>Ponencias de investigación aplicada (Salón I-606)</h2>
-                    
+
                     <div class="agenda-item">
                         <div class="item-time">2:10 p.m. - 4:55 p.m.</div>
                         <div class="item-content">
                             <h3>Presentación de avances de investigación</h3>
                             <p><strong>Ubicación:</strong> Salón I-606</p>
                             <ul class="tag-list">
-                                <li><strong>14:10 – 14:30:</strong> Yeiver Sanabria – Segmentación de cerámica precolombina</li>
-                                <li><strong>14:35 – 14:55:</strong> Salomé Castro – Descubrimiento de moléculas (Dengue)</li>
-                                <li><strong>15:00 – 15:20:</strong> Juan David Sierra – Caracterización de cerámica</li>
-                                <li><strong>15:25 – 15:45:</strong> Brayan Herrera – Aprendizaje por refuerzo en trading</li>
-                                <li><strong>15:50 – 16:10:</strong> Pablo Reyes – Envejecimiento facial con difusión</li>
-                                <li><strong>16:15 – 16:35:</strong> Angie Donato – IA en búsqueda humanitaria</li>
-                                <li><strong>16:35 – 16:55:</strong> Hainer Mejía – Reconstrucción facial 3D con IA</li>
+                                <li><strong>14:10 – 14:30:</strong> Yeiver Sanabria Sanchez – Segmentación automática de
+                                    la composición de cerámica precolombina a partir de microfotografías</li>
+                                <li><strong>14:35 – 14:55:</strong> Salomé Castro Gómez – Aplicación de teoría de grafos
+                                    y química computacional para el descubrimiento de moléculas inhibidoras para la
+                                    proteína NS1 (DENV-1/DENGUE)</li>
+                                <li><strong>15:00 – 15:20:</strong> Juan David Sierra Gacharna – Caracterización
+                                    automática de la composición de cerámica precolombina a partir de microfotografías
+                                </li>
+                                <li><strong>15:25 – 15:45:</strong> Brayan Alexander Herrera Villalba – Diseño de un
+                                    modelo de aprendizaje por refuerzo para trading algorítmico</li>
+                                <li><strong>15:50 – 16:10:</strong> Pablo Alejandro Reyes Granados – Del ruido a la
+                                    vejez: envejecimiento facial con modelos de difusión</li>
+                                <li><strong>16:15 – 16:35:</strong> Angie Valentina Donato Pita – Archivos que hablan:
+                                    inteligencia artificial para descifrar documentos de la búsqueda humanitaria</li>
+                                <li><strong>16:35 – 16:55:</strong> Hainer Andrés Mejía Barraza – Del cráneo al rostro:
+                                    un pipeline 3D impulsado por IA y construido con herramientas abiertas</li>
                             </ul>
                         </div>
                     </div>
@@ -384,4 +409,5 @@
     </section>
 
 </body>
+
 </html>
