@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
+import re
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modelado Matemático | CIDEX</title>
-    <link rel="stylesheet" href="../styles.css" />
-    <style>
-        :root {
-            --theme-dark: #1e40af;
-            --theme-main: #2563eb;
-            --theme-soft: #dbeafe;
+def generate_html():
+    css = """        :root {
+            --green-dark: #0b3d2c;
+            --green-main: #0f5a3c;
+            --green-soft: #eaf4ef;
             --gold: #c89b3c;
             --text: #1f2a24;
             --muted: #5f6f66;
@@ -35,7 +29,7 @@
             margin: 0;
             font-family: "Inter", "Segoe UI", sans-serif;
             color: var(--text);
-            background: #f8fafc;
+            background: #f7faf8;
             line-height: 1.65;
         }
 
@@ -64,7 +58,7 @@
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: var(--theme-main);
+            color: var(--green-main);
             margin-bottom: 0.8rem;
         }
 
@@ -84,7 +78,8 @@
 
         .hero-linea {
             padding: 6rem 0 4rem;
-            background: linear-gradient(135deg, var(--theme-main), var(--theme-dark));
+            background:
+                linear-gradient(135deg, rgba(15, 90, 60, 0.96), rgba(11, 61, 44, 0.94));
             color: var(--white);
         }
 
@@ -150,7 +145,7 @@
             font-size: clamp(1.8rem, 2.6vw, 2.8rem);
             line-height: 1.15;
             margin: 0 0 0.8rem;
-            color: var(--theme-dark);
+            color: var(--green-dark);
         }
 
         .section-title p {
@@ -200,7 +195,7 @@
         .feature-card h3 {
             margin: 0 0 0.45rem;
             font-size: 1.05rem;
-            color: var(--theme-dark);
+            color: var(--green-dark);
         }
 
         .feature-card p {
@@ -239,7 +234,7 @@
         .prof-content h3 {
             margin: 0 0 0.35rem;
             font-size: 1.08rem;
-            color: var(--theme-dark);
+            color: var(--green-dark);
             line-height: 1.2;
         }
 
@@ -262,7 +257,7 @@
         }
 
         .prof-email a {
-            color: var(--theme-main);
+            color: var(--green-main);
             font-weight: 600;
             font-size: 0.92rem;
             word-break: break-word;
@@ -285,14 +280,14 @@
             border-radius: 999px;
             border: 1px solid var(--border);
             background: #f4f7f5;
-            color: var(--theme-dark);
+            color: var(--green-dark);
             transition: 0.2s ease;
         }
 
         .prof-links a:hover {
-            background: var(--theme-main);
+            background: var(--green-main);
             color: #fff;
-            border-color: var(--theme-main);
+            border-color: var(--green-main);
         }
 
         .project-box {
@@ -302,15 +297,15 @@
             margin-bottom: 1rem;
             padding: 0.85rem 0.95rem;
             border-radius: 14px;
-            background: var(--theme-soft);
-            border: 1px solid var(--theme-soft);
+            background: var(--green-soft);
+            border: 1px solid #dbe9e0;
         }
 
         .project-box strong {
             font-size: 0.82rem;
             text-transform: uppercase;
             letter-spacing: 0.04em;
-            color: var(--theme-main);
+            color: var(--green-main);
         }
 
         .project-box span {
@@ -329,8 +324,8 @@
         .prof-tags span {
             font-size: 0.83rem;
             padding: 0.45rem 0.75rem;
-            background: var(--theme-soft);
-            color: var(--theme-main);
+            background: var(--green-soft);
+            color: var(--green-main);
             border-radius: 999px;
         }
 
@@ -373,7 +368,18 @@
                 padding-left: 1rem;
                 padding-right: 1rem;
             }
-        }
+        }"""
+        
+    html = f"""<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelado Matemático | CIDEX</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+{css}
     </style>
 </head>
 
@@ -495,29 +501,19 @@
                     <div class="prof-content">
                         <h3>Germán Combariza</h3>
                         <div class="prof-role">Teoría de grafos y modelación</div>
-                        <p>Investigación en teoría de grafos y teoría de códigos con aplicaciones en modelado
-                            matemático.</p>
-
+                        <p>Investigación en teoría de grafos y teoría de códigos con aplicaciones en modelado matemático.</p>
+                        
                         <div class="prof-email">
                             <a href="mailto:german.combariza@uexternado.edu.co">german.combariza@uexternado.edu.co</a>
                         </div>
                         <div class="prof-links">
-                            <a href="https://orcid.org/0000-0002-1878-665X" target="_blank"
-                                rel="noopener noreferrer">ORCID</a>
-                            <a href="https://scholar.google.com/citations?user=I8wEstYAAAAJ&hl=en" target="_blank"
-                                rel="noopener noreferrer">Scholar</a>
-                            <a href="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000555975"
-                                target="_blank" rel="noopener noreferrer">CVLAC</a>
-                        </div>
-
-
-                        <div class="project-box">
-                            <strong>Semillero</strong>
-                            <span>Teoría de Grafos</span>
+                            <a href="https://orcid.org/0000-0002-1878-665X" target="_blank">ORCID</a>
+                            <a href="https://scholar.google.com" target="_blank">Scholar</a>
+                            <a href="https://scienti.minciencias.gov.co" target="_blank">CvLAC</a>
                         </div>
                         <div class="project-box">
                             <strong>Proyecto actual</strong>
-                            <span>Proyectos de Investigación UExternado</span>
+                            <span>Teoría de Grafos</span>
                         </div>
                         <div class="prof-tags">
                             <span>Modelado Matemático</span>
@@ -533,16 +529,13 @@
                         <h3>Camilo Castillo</h3>
                         <div class="prof-role">Optimización y finanzas</div>
                         <p>Modelos matemáticos aplicados a economía y finanzas, optimización de portafolios y ALM.</p>
-
+                        
                         <div class="prof-email">
                             <a href="mailto:camilo.castillo@uexternado.edu.co">camilo.castillo@uexternado.edu.co</a>
                         </div>
                         <div class="prof-links">
                             <a href="https://orcid.org/0000-0003-3064-3464" target="_blank">ORCID</a>
-                            <a href="https://scholar.google.com/citations?user=aL1tS6cAAAAJ&hl=es&oi=sra"
-                                target="_blank">Scholar</a>
-                            <a href="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001519849"
-                                target="_blank" rel="noopener noreferrer">CVLAC</a>
+                            <a href="https://scholar.google.com" target="_blank">Scholar</a>
                             <a href="https://github.com/CamiloCastillo88" target="_blank">GitHub</a>
                         </div>
                         <div class="project-box">
@@ -562,21 +555,9 @@
                         <h3>Arley Torres</h3>
                         <div class="prof-role">Topología y datos</div>
                         <p>Análisis Topológico de Datos y grafos aplicados a problemas de modelación.</p>
-
+                        
                         <div class="prof-email">
                             <a href="mailto:arley.torres@uexternado.edu.co">arley.torres@uexternado.edu.co</a>
-                        </div>
-                        <div class="prof-links">
-                            <a href="https://orcid.org/0009-0003-9498-4214" target="_blank"
-                                rel="noopener noreferrer">ORCID</a>
-                            <a href="https://scholar.google.com/citations?user=O9KwKgsAAAAJ&hl=es" target="_blank"
-                                rel="noopener noreferrer">Scholar</a>
-                            <a href="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001313266"
-                                target="_blank" rel="noopener noreferrer">CVLAC</a>
-                            <a href="https://uexternado.academia.edu/ArleyFernandoTorresG" target="_blank"
-                                rel="noopener noreferrer">Academia</a>
-                            <a href="https://www.researchgate.net/profile/Arley-Torres-Galindo?ev=hdr_xprf"
-                                target="_blank" rel="noopener noreferrer">ResearchGate</a>
                         </div>
                         <div class="prof-links">
                             <a href="https://orcid.org/0009-0003-9498-4214" target="_blank">ORCID</a>
@@ -600,21 +581,9 @@
                         <h3>Dario Peña</h3>
                         <div class="prof-role">Procesos estocásticos</div>
                         <p>Optimización estocástica y fundamentos probabilísticos del aprendizaje automático.</p>
-
+                        
                         <div class="prof-email">
                             <a href="mailto:dario.pena@uexternado.edu.co">dario.pena@uexternado.edu.co</a>
-                        </div>
-                        <div class="prof-links">
-                            <a href="https://orcid.org/0009-0008-8939-2288" target="_blank"
-                                rel="noopener noreferrer">ORCID</a>
-                            <a href="https://scholar.google.com/citations?user=8w6DvYgAAAAJ&hl=es#d=gs_hdr_drw&t=1718386332735"
-                                target="_blank" rel="noopener noreferrer">Scholar</a>
-                            <a href="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000859168"
-                                target="_blank" rel="noopener noreferrer">CVLAC</a>
-                            <a href="https://uexternado.academia.edu/DarioPe%C3%B1a" target="_blank"
-                                rel="noopener noreferrer">Academia</a>
-                            <a href="https://www.researchgate.net/profile/Dario-Pena-Salamanca" target="_blank"
-                                rel="noopener noreferrer">ResearchGate</a>
                         </div>
                         <div class="prof-links">
                             <a href="https://orcid.org/0009-0008-8939-2288" target="_blank">ORCID</a>
@@ -637,24 +606,11 @@
                         <h3>Leonardo Guarín</h3>
                         <div class="prof-role">Energía y sostenibilidad</div>
                         <p>Modelos para energía solar y acceso a recursos en comunidades vulnerables.</p>
-
+                        
                         <div class="prof-email">
                             <a href="mailto:leonardo.guarin@uexternado.edu.co">leonardo.guarin@uexternado.edu.co</a>
                         </div>
-                        <div class="prof-links">
-                            <a href="https://orcid.org/0009-0005-0082-4696" target="_blank">ORCID</a>
-                            <a href="#" target="_blank">Scholar</a>
-                            <a href="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001670367"
-                                target="_blank">CvLAC</a>
-                        </div>
-
-                        <div class="project-box">
-                            <strong>Proyecto actual</strong>
-                            <span>
-                                Desarrollo y optimización de nuevas estructuras de calentamiento y purificación de agua
-                                mediante plástico alveolar y energía solar</span>
-                        </div>
-
+                        
                         <div class="prof-tags">
                             <span>Modelado Matemático</span>
                         </div>
@@ -668,21 +624,9 @@
                         <h3>Margui Romero</h3>
                         <div class="prof-role">Análisis numérico</div>
                         <p>Optimización, métodos numéricos y modelos matemáticos aplicados.</p>
-
+                        
                         <div class="prof-email">
                             <a href="mailto:margui.romero@uexternado.edu.co">margui.romero@uexternado.edu.co</a>
-                        </div>
-                        <div class="prof-links">
-                            <a href="https://orcid.org/0000-0002-1339-8914" target="_blank"
-                                rel="noopener noreferrer">ORCID</a>
-                            <a href="https://scholar.google.com/citations?hl=es&user=OWo1nmgAAAAJ" target="_blank"
-                                rel="noopener noreferrer">Scholar</a>
-                            <a href="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001056867"
-                                target="_blank" rel="noopener noreferrer">CVLAC</a>
-                            <a href="https://uexternado.academia.edu/MarguiARomeroPinedo" target="_blank"
-                                rel="noopener noreferrer">Academia</a>
-                            <a href="https://www.researchgate.net/profile/Margui-Romero-Pinedo?ev=hdr_xprf"
-                                target="_blank" rel="noopener noreferrer">ResearchGate</a>
                         </div>
                         <div class="prof-links">
                             <a href="https://orcid.org/0000-0002-1339-8914" target="_blank">ORCID</a>
@@ -705,29 +649,11 @@
                         <h3>Juan Urueña</h3>
                         <div class="prof-role">Econometría y finanzas</div>
                         <p>Modelos financieros y optimización aplicada a economía.</p>
-
+                        
                         <div class="prof-email">
                             <a href="mailto:juan.uruena1@uexternado.edu.co">juan.uruena1@uexternado.edu.co</a>
                         </div>
-                        <div class="prof-links">
-                            <a href="https://orcid.org/0000-0001-5628-3255" target="_blank">ORCID</a>
-                            <a href="https://scholar.google.com/citations?user=EK99RJAAAAAJ&hl=es"
-                                target="_blank">Scholar</a>
-                            <a href="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001605776"
-                                target="_blank">CvLAC</a>
-                            <a href="https://independent.academia.edu/JuanUrue%C3%B1a11" target="_blank">Academia</a>
-                            <a href="https://www.researchgate.net/profile/Juan-Uruena-3"
-                                target="_blank">ResearchGate</a>
-                        </div>
-
-                        <div class="project-box">
-                            <strong>Semillero</strong>
-                            <span>Aprendizaje Reforzado</span>
-                        </div>
-                        <div class="project-box">
-                            <strong>Proyecto actual</strong>
-                            <span>Vulnerability Index</span>
-                        </div>
+                        
                         <div class="prof-tags">
                             <span>Modelado Matemático</span>
                         </div>
@@ -741,22 +667,11 @@
                         <h3>Santiago Pérez</h3>
                         <div class="prof-role">Investigación de operaciones</div>
                         <p>Modelos predictivos en sistemas agroindustriales.</p>
-
+                        
                         <div class="prof-email">
                             <a href="mailto:santiago.perez@uexternado.edu.co">santiago.perez@uexternado.edu.co</a>
                         </div>
-                        <div class="prof-links">
-                            <a href="https://orcid.org/0009-0001-9062-1390" target="_blank">ORCID</a>
-                            <a href="https://scholar.google.com/citations?user=myB675MAAAAJ&hl=es&authuser=2"
-                                target="_blank">Scholar</a>
-                            <a href="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001841782"
-                                target="_blank">CvLAC</a>
-                            <a href="https://independent.academia.edu/SantiagoP%C3%A9rezAngarita"
-                                target="_blank">Academia</a>
-                            <a href="https://www.researchgate.net/profile/Santiago-Perez-Angarita?ev=hdr_xprf"
-                                target="_blank">ResearchGate</a>
-                        </div>
-
+                        
                         <div class="prof-tags">
                             <span>Modelado Matemático</span>
                         </div>
@@ -770,31 +685,11 @@
                         <h3>José Tapias</h3>
                         <div class="prof-role">Econometría y análisis espacial</div>
                         <p>Modelación económica aplicada a problemas sociales y territoriales.</p>
-
+                        
                         <div class="prof-email">
                             <a href="mailto:jose.tapias1@uexternado.edu.co">jose.tapias1@uexternado.edu.co</a>
                         </div>
-                        <div class="prof-links">
-                            <a href="https://orcid.org/0009-0000-4076-3019" target="_blank"
-                                rel="noopener noreferrer">ORCID</a>
-                            <a href="https://scholar.google.com/citations?hl=es&user=lNeHTcIAAAAJ&view_op=list_works"
-                                target="_blank" rel="noopener noreferrer">Scholar</a>
-                            <a href="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001619987"
-                                target="_blank" rel="noopener noreferrer">CVLAC</a>
-                            <a href="http://uexternado.academia.edu/JoseTapias" target="_blank"
-                                rel="noopener noreferrer">Academia</a>
-                            <a href="https://www.researchgate.net/profile/Jose-Tapias-3?ev=hdr_xprf" target="_blank"
-                                rel="noopener noreferrer">ResearchGate</a>
-                        </div>
-
-                        <div class="project-box">
-                            <strong>Semillero</strong>
-                            <span>Semillero ILomaps</span>
-                        </div>
-                        <div class="project-box">
-                            <strong>Proyecto actual</strong>
-                            <span>Investigación proyecto Clínica de Occidente, índice de vulnerabilidad</span>
-                        </div>
+                        
                         <div class="prof-tags">
                             <span>Modelado Matemático</span>
                             <span>Machine Learning</span>
@@ -809,27 +704,11 @@
                         <h3>Julián Sánchez</h3>
                         <div class="prof-role">Simulación y optimización</div>
                         <p>Inferencia estadística y modelación cuantitativa aplicada.</p>
-
+                        
                         <div class="prof-email">
                             <a href="mailto:julian.sanchez@uexternado.edu.co">julian.sanchez@uexternado.edu.co</a>
                         </div>
-                        <div class="prof-links">
-                            <a href="https://orcid.org/0009-0005-3375-4049" target="_blank"
-                                rel="noopener noreferrer">ORCID</a>
-                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=es&user=3rbo-4cAAAAJ"
-                                target="_blank" rel="noopener noreferrer">Scholar</a>
-                            <a href="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000957780"
-                                target="_blank" rel="noopener noreferrer">CVLAC</a>
-                        </div>
-
-                        <div class="project-box">
-                            <strong>Semillero</strong>
-                            <span>Aprendizaje Reforzado</span>
-                        </div>
-                        <div class="project-box">
-                            <strong>Proyecto actual</strong>
-                            <span>Evaluación de estudiantes y Vulnerability Index</span>
-                        </div>
+                        
                         <div class="prof-tags">
                             <span>Modelado Matemático</span>
                             <span>Machine Learning</span>
@@ -849,3 +728,10 @@
 </body>
 
 </html>
+"""
+
+    with open("/Users/andresmartinez/Documents/GitHub/investigacioncienciadedatos/modelado-matematico.html", "w") as f:
+        f.write(html)
+
+if __name__ == "__main__":
+    generate_html()
