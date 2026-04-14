@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelado Matemático | CIDEX</title>
+
+    <style>
+        :root {
+            --green-dark: #0b3d2c;
+            --green-main: #0f5a3c;
+            --green-soft: #eaf4ef;
+            --gold: #c89b3c;
+            --text: #1f2a24;
+            --muted: #5f6f66;
+            --white: #ffffff;
+            --border: #d9e5dd;
+            --shadow: 0 14px 40px rgba(11, 61, 44, 0.08);
+            --radius-lg: 24px;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            background: #f7faf8;
+            color: var(--text);
+        }
+
+        .container {
+            width: min(1200px, 92%);
+            margin: auto;
+        }
+
+        .hero {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #0f5a3c, #0b3d2c);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            max-width: 700px;
+            opacity: 0.9;
+        }
+
+        .professors {
+            padding: 4rem 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card h3 {
+            margin: 0;
+            color: var(--green-dark);
+        }
+
+        .role {
+            color: var(--gold);
+            font-size: 0.9rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+
+        .email a {
+            color: var(--green-main);
+            font-weight: bold;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin: 0.8rem 0;
+        }
+
+        .links a {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.6rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: #f4f7f5;
+        }
+
+        .project {
+            background: var(--green-soft);
+            padding: 0.6rem;
+            border-radius: 12px;
+            margin-bottom: 0.6rem;
+        }
+
+        .tags {
+            margin-top: auto;
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .tags span {
+            background: var(--green-soft);
+            padding: 0.3rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Modelado Matemático</h1>
+            <p>
+                La línea de Modelado Matemático se centra en la construcción de modelos formales para
+                representar, analizar y resolver problemas complejos en economía, finanzas, energía,
+                sistemas sociales y fenómenos reales. Integra optimización, análisis numérico,
+                econometría y métodos cuantitativos para la toma de decisiones bajo incertidumbre.
+            </p>
+        </div>
+    </section>
+
+    <!-- PROFESORES -->
+    <section class="professors">
+        <div class="container">
+            <div class="grid">
+
+                <!-- COMBARIZA -->
+                <div class="card">
+                    <img src="profesores/combariza-gonzalez-german-andres.jpg">
+                    <div class="card-content">
+                        <h3>Germán Combariza</h3>
+                        <div class="role">Teoría de grafos y modelación</div>
+                        <p>Investigación en teoría de grafos y teoría de códigos con aplicaciones en modelado
+                            matemático.</p>
+                        <div class="email"><a href="mailto:german.combariza@uexternado.edu.co">Correo</a></div>
+                        <div class="links">
+                            <a href="https://orcid.org/0000-0002-1878-665X">ORCID</a>
+                            <a href="https://scholar.google.com">Scholar</a>
+                            <a href="https://scienti.minciencias.gov.co">CvLAC</a>
+                        </div>
+                        <div class="project"><strong>Proyecto:</strong> Teoría de Grafos</div>
+                        <div class="tags"><span>Modelado</span></div>
+                    </div>
+                </div>
+
+                <!-- CAMILO -->
+                <div class="card">
+                    <img src="profesores/castillo-tarazona-camilo.jpg">
+                    <div class="card-content">
+                        <h3>Camilo Castillo</h3>
+                        <div class="role">Optimización y finanzas</div>
+                        <p>Modelos matemáticos aplicados a economía y finanzas, optimización de portafolios y ALM.</p>
+                        <div class="email"><a href="mailto:camilo.castillo@uexternado.edu.co">Correo</a></div>
+                        <div class="links">
+                            <a href="https://orcid.org/0000-0003-3064-3464">ORCID</a>
+                            <a href="https://scholar.google.com">Scholar</a>
+                            <a href="https://github.com/CamiloCastillo88">GitHub</a>
+                        </div>
+                        <div class="project"><strong>Proyecto:</strong> Financial Market Correlation</div>
+                        <div class="tags"><span>Modelado</span></div>
+                    </div>
+                </div>
+
+                <!-- ARLEY -->
+                <div class="card">
+                    <img src="profesores/torres-galindo-arley.jpg">
+                    <div class="card-content">
+                        <h3>Arley Torres</h3>
+                        <div class="role">Topología y datos</div>
+                        <p>Análisis Topológico de Datos y grafos aplicados a problemas de modelación.</p>
+                        <div class="email"><a href="mailto:arley.torres@uexternado.edu.co">Correo</a></div>
+                        <div class="links">
+                            <a href="https://orcid.org/0009-0003-9498-4214">ORCID</a>
+                            <a href="https://scholar.google.com">Scholar</a>
+                        </div>
+                        <div class="project"><strong>Proyecto:</strong> Z_k Stratifolds</div>
+                        <div class="tags"><span>Modelado</span></div>
+                    </div>
+                </div>
+
+                <!-- DARIO -->
+                <div class="card">
+                    <img src="profesores/pena-salamanca-dario-cristopher.jpg">
+                    <div class="card-content">
+                        <h3>Dario Peña</h3>
+                        <div class="role">Procesos estocásticos</div>
+                        <p>Optimización estocástica y fundamentos probabilísticos del aprendizaje automático.</p>
+                        <div class="email"><a href="mailto:dario.pena@uexternado.edu.co">Correo</a></div>
+                        <div class="links">
+                            <a href="https://orcid.org/0009-0008-8939-2288">ORCID</a>
+                        </div>
+                        <div class="project"><strong>Proyecto:</strong> InfoProyecto 2427</div>
+                        <div class="tags"><span>Modelado</span></div>
+                    </div>
+                </div>
+
+                <!-- LEONARDO -->
+                <div class="card">
+                    <img src="profesores/guarin-salomon-leonardo.jpg">
+                    <div class="card-content">
+                        <h3>Leonardo Guarín</h3>
+                        <div class="role">Energía y sostenibilidad</div>
+                        <p>Modelos para energía solar y acceso a recursos en comunidades vulnerables.</p>
+                        <div class="email"><a href="mailto:leonardo.guarin@uexternado.edu.co">Correo</a></div>
+                        <div class="tags"><span>Modelado</span></div>
+                    </div>
+                </div>
+
+                <!-- MARGUI -->
+                <div class="card">
+                    <img src="profesores/romero-pinedo-margui-angelica.jpg">
+                    <div class="card-content">
+                        <h3>Margui Romero</h3>
+                        <div class="role">Análisis numérico</div>
+                        <p>Optimización, métodos numéricos y modelos matemáticos aplicados.</p>
+                        <div class="email"><a href="mailto:margui.romero@uexternado.edu.co">Correo</a></div>
+                        <div class="links">
+                            <a href="https://orcid.org/0000-0002-1339-8914">ORCID</a>
+                        </div>
+                        <div class="project"><strong>Proyecto:</strong> Evaluación en ciencia de datos</div>
+                        <div class="tags"><span>Modelado</span></div>
+                    </div>
+                </div>
+
+                <!-- URUEÑA -->
+                <div class="card">
+                    <img src="profesores/uruena-mejia-juan.jpg">
+                    <div class="card-content">
+                        <h3>Juan Urueña</h3>
+                        <div class="role">Econometría y finanzas</div>
+                        <p>Modelos financieros y optimización aplicada a economía.</p>
+                        <div class="email"><a href="mailto:juan.uruena1@uexternado.edu.co">Correo</a></div>
+                        <div class="tags"><span>Modelado</span></div>
+                    </div>
+                </div>
+
+                <!-- SANTIAGO -->
+                <div class="card">
+                    <img src="profesores/perez-angarita-santiago.jpg">
+                    <div class="card-content">
+                        <h3>Santiago Pérez</h3>
+                        <div class="role">Investigación de operaciones</div>
+                        <p>Modelos predictivos en sistemas agroindustriales.</p>
+                        <div class="email"><a href="mailto:santiago.perez@uexternado.edu.co">Correo</a></div>
+                        <div class="tags"><span>Modelado</span></div>
+                    </div>
+                </div>
+
+                <!-- TAPIAS -->
+                <div class="card">
+                    <img src="profesores/tapias-ortega-jose-manuel.jpg">
+                    <div class="card-content">
+                        <h3>José Tapias</h3>
+                        <div class="role">Econometría y análisis espacial</div>
+                        <p>Modelación económica aplicada a problemas sociales y territoriales.</p>
+                        <div class="email"><a href="mailto:jose.tapias1@uexternado.edu.co">Correo</a></div>
+                        <div class="tags"><span>Modelado</span></div>
+                    </div>
+                </div>
+
+                <!-- JULIAN -->
+                <div class="card">
+                    <img src="profesores/sanchez-lopez-julian-fernando.jpg">
+                    <div class="card-content">
+                        <h3>Julián Sánchez</h3>
+                        <div class="role">Simulación y optimización</div>
+                        <p>Inferencia estadística y modelación cuantitativa aplicada.</p>
+                        <div class="email"><a href="mailto:julian.sanchez@uexternado.edu.co">Correo</a></div>
+                        <div class="tags"><span>Modelado</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
