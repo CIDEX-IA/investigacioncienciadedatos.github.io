@@ -1,0 +1,129 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+
+\geometry{top=34mm,bottom=25mm,left=25mm,right=25mm}
+
+\definecolor{ExternadoGreen}{RGB}{0,104,55}
+\definecolor{ExternadoDark}{RGB}{0,51,25}
+\definecolor{ExternadoGold}{RGB}{198,146,20}
+
+\hypersetup{colorlinks=true,linkcolor=ExternadoGreen,urlcolor=ExternadoGreen,citecolor=ExternadoGreen}
+
+\setlength{\headheight}{52pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\IfFileExists{firma.jpg}{\includegraphics[height=40pt]{firma.jpg}}{}}
+\fancyhead[R]{\textcolor{ExternadoGreen}{\small Departamento de Matemáticas}}
+\fancyfoot[C]{\textcolor{ExternadoDark}{\thepage}}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{\IfFileExists{firma.jpg}{\includegraphics[height=40pt]{firma.jpg}}{}}
+  \fancyhead[R]{\textcolor{ExternadoGreen}{\small Universidad Externado de Colombia}}
+  \fancyfoot[C]{\textcolor{ExternadoDark}{\thepage}}
+}
+
+\title{
+\vspace{-8mm}
+\textbf{\textcolor{ExternadoGreen}{Ficha de Proyecto de Investigación}}\\
+\large \textcolor{ExternadoDark}{Grupo de Investigación en Ciencia de Datos}\\
+\large \textcolor{ExternadoDark}{Universidad Externado de Colombia}
+}
+\author{\textcolor{ExternadoDark}{Departamento de Matemáticas}}
+\date{\textcolor{ExternadoDark}{\today}}
+
+\setlist[itemize]{leftmargin=*, itemsep=3pt, topsep=3pt}
+\setstretch{1.12}
+
+\begin{document}
+\maketitle
+\vspace{-3mm}
+\noindent\textcolor{ExternadoDark}{\rule{\textwidth}{0.6pt}}
+
+\section*{1. Información general}
+\begin{longtable}{p{4.2cm} p{10.4cm}}
+\toprule
+\textbf{Campo} & \textbf{Detalle} \\
+\midrule
+Título del proyecto & Income and Financial Market Correlation \\
+Investigador principal & Camilo Andre Castillo Tarazona \\
+Co-investigadores & Camilo Andre Castillo Tarazona \\
+Líneas de investigación & Modelado Matemático \\
+Año de inicio & 2024-06-03 \\
+Duración estimada & No reportado. \\
+Estado del proyecto & Ejecución \\
+Tipo de proyecto & Investigación académica; \\
+Nivel de avance actual & Análisis de resultados; \\
+Semillero vinculado & No \\
+Nombre del semillero & No aplica \\
+Fuentes de financiación & No requiere financiación; \\
+\bottomrule
+\end{longtable}
+
+\section*{2. Problema de investigación}
+Los modelos de selección óptima de cartera en su mayoría no presentan correlación con otras fuentes diferentes al ingreso de la cartera, entonces surge la pregunta ¿Cómo cambia la asignación óptima de cartera si se tiene en cuenta correlaciónes con otras fuentes de aleatoriedad?
+
+\section*{3. Objetivo general}
+Construir modelos estocásticos teóricos que relacionen la selección óptima de cartera y el ingreso del gestor de la cartera en presencia de correlación
+
+\section*{4. Metodología}
+Se pretende construir un modelo matemático para la selección de cartera óptima.
+
+\section*{5. Comunidades a impactar}
+\subsection*{5.1. Comunidades externas}
+\begin{itemize}
+    \item Gestores de portafolios
+\end{itemize}
+
+\subsection*{5.2. Comunidades internas}
+\begin{itemize}
+    \item .
+\end{itemize}
+
+\section*{6. Semillero y articulación formativa}
+\subsection*{6.1. Participación del semillero}
+No reportado.
+
+\subsection*{6.2. Aliados externos}
+No reportado.
+
+\section*{7. Requerimientos tecnológicos}
+\begin{itemize}
+    \item Computación de alto rendimiento (HPC)
+    \item Infraestructura en la nube
+\end{itemize}
+
+\section*{8. Resultados esperados}
+\subsection*{8.1. Resultados generales}
+Artículo de investigación en revista indexada, ponencias en eventos internacionales como parte de la divulgación científica.
+
+\subsection*{8.2. Resultados científicos esperados}
+\begin{itemize}
+    \item Artículo científico
+    \item Ponencia
+    \item Working paper
+\end{itemize}
+
+\subsection*{8.3. Productos aplicados}
+No reportado.
+
+\section*{9. Observación de gestión}
+Este documento fue generado automáticamente a partir del formulario de registro de proyectos del grupo. Se recomienda revisar y ajustar la redacción final antes de su circulación institucional o envío a convocatorias.
+
+\end{document}

@@ -1,0 +1,133 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+
+\geometry{top=34mm,bottom=25mm,left=25mm,right=25mm}
+
+\definecolor{ExternadoGreen}{RGB}{0,104,55}
+\definecolor{ExternadoDark}{RGB}{0,51,25}
+\definecolor{ExternadoGold}{RGB}{198,146,20}
+
+\hypersetup{colorlinks=true,linkcolor=ExternadoGreen,urlcolor=ExternadoGreen,citecolor=ExternadoGreen}
+
+\setlength{\headheight}{52pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\IfFileExists{firma.jpg}{\includegraphics[height=40pt]{firma.jpg}}{}}
+\fancyhead[R]{\textcolor{ExternadoGreen}{\small Departamento de Matemáticas}}
+\fancyfoot[C]{\textcolor{ExternadoDark}{\thepage}}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{\IfFileExists{firma.jpg}{\includegraphics[height=40pt]{firma.jpg}}{}}
+  \fancyhead[R]{\textcolor{ExternadoGreen}{\small Universidad Externado de Colombia}}
+  \fancyfoot[C]{\textcolor{ExternadoDark}{\thepage}}
+}
+
+\title{
+\vspace{-8mm}
+\textbf{\textcolor{ExternadoGreen}{Ficha de Proyecto de Investigación}}\\
+\large \textcolor{ExternadoDark}{Grupo de Investigación en Ciencia de Datos}\\
+\large \textcolor{ExternadoDark}{Universidad Externado de Colombia}
+}
+\author{\textcolor{ExternadoDark}{Departamento de Matemáticas}}
+\date{\textcolor{ExternadoDark}{\today}}
+
+\setlist[itemize]{leftmargin=*, itemsep=3pt, topsep=3pt}
+\setstretch{1.12}
+
+\begin{document}
+\maketitle
+\vspace{-3mm}
+\noindent\textcolor{ExternadoDark}{\rule{\textwidth}{0.6pt}}
+
+\section*{1. Información general}
+\begin{longtable}{p{4.2cm} p{10.4cm}}
+\toprule
+\textbf{Campo} & \textbf{Detalle} \\
+\midrule
+Título del proyecto & Pipeline de OCR Híbrido para Documentos Históricos y Manuscritos \\
+Investigador principal & Alber Ferney Montenegro Vargas \\
+Co-investigadores & No reportado \\
+Líneas de investigación & Machine Learning, Gestión del Conocimeinto \\
+Año de inicio & 2026-01-15 \\
+Duración estimada & 18.0 \\
+Estado del proyecto & Formulación \\
+Tipo de proyecto & Investigación académica;Desarrollo aplicado;Formación (semillero / curso); \\
+Nivel de avance actual & Diseño metodológico; \\
+Semillero vinculado & Si \\
+Nombre del semillero & NeuroMinds \\
+Fuentes de financiación & No requiere financiación; \\
+\bottomrule
+\end{longtable}
+
+\section*{2. Problema de investigación}
+El procesamiento automático de documentos históricos y manuscritos representa un desafío técnico significativo debido a la heterogeneidad tipográfica, la degradación del soporte físico, la variabilidad caligráfica y la coexistencia de texto impreso y manuscrito en un mismo documento. Los sistemas de OCR convencionales están optimizados para documentos modernos estandarizados y presentan tasas de error elevadas en documentos históricos, limitando su utilidad para la digitalización y análisis de archivos documentales de valor patrimonial o humanitario.
+
+\section*{3. Objetivo general}
+Diseñar e implementar un pipeline híbrido de reconocimiento óptico de caracteres que integre motores OCR e ICR mediante un orquestador inteligente de decisión, capaz de procesar documentos con texto impreso y manuscrito con alta precisión y trazabilidad.
+
+\section*{4. Metodología}
+El proyecto abarca desde el diseño del pipeline hasta su implementación y validación con documentos reales. El alcance incluye preprocesamiento de imágenes documentales, clasificación automática de tipo de texto (impreso vs manuscrito), integración de motores especializados (PaddleOCR, Tesseract, EasyOCR para texto impreso; Kraken y Calamari para manuscrito) y desarrollo de un orquestador de decisión que selecciona el motor óptimo por segmento. Los datos requeridos son imágenes de documentos históricos con texto impreso y manuscrito en español. Las fuentes incluyen repositorios documentales de acceso público y colecciones institucionales. No se requieren convenios para la fase inicial. Los requerimientos computacionales son moderados y se cubren con infraestructura disponible en el grupo. No se contemplan aliados externos en este proyecto.
+
+\section*{5. Comunidades a impactar}
+\subsection*{5.1. Comunidades externas}
+\begin{itemize}
+    \item Archivos históricos, bibliotecas nacionales, instituciones con acervos documentales de valor patrimonial o humanitario, investigadores en humanidades digitales.
+\end{itemize}
+
+\subsection*{5.2. Comunidades internas}
+\begin{itemize}
+    \item Estudiantes y docentes del programa de Ciencia de Datos, semillero NeuroMinds, Departamento de Matemáticas de la Universidad Externado de Colombia.
+\end{itemize}
+
+\section*{6. Semillero y articulación formativa}
+\subsection*{6.1. Participación del semillero}
+\begin{itemize}
+    \item Desarrollo metodológico
+\end{itemize}
+
+\subsection*{6.2. Aliados externos}
+No reportado.
+
+\section*{7. Requerimientos tecnológicos}
+\begin{itemize}
+    \item Computación de alto rendimiento (HPC)
+    \item Almacenamiento de datos
+    \item Herramientas de visualización
+\end{itemize}
+
+\section*{8. Resultados esperados}
+\subsection*{8.1. Resultados generales}
+Pipeline híbrido OCR/ICR funcional con orquestador inteligente, validado en documentos históricos en español. Como producto académico se espera una ponencia en congreso nacional o internacional de procesamiento de lenguaje natural o visión por computador. Como producto de formación, una tesis de pregrado sobre comparación de modelos de reconocimiento de caracteres para documentos históricos colombianos.
+
+\subsection*{8.2. Resultados científicos esperados}
+\begin{itemize}
+    \item Ponencia
+\end{itemize}
+
+\subsection*{8.3. Productos aplicados}
+\begin{itemize}
+    \item Software / App
+    \item Prototipo
+\end{itemize}
+
+\section*{9. Observación de gestión}
+Este documento fue generado automáticamente a partir del formulario de registro de proyectos del grupo. Se recomienda revisar y ajustar la redacción final antes de su circulación institucional o envío a convocatorias.
+
+\end{document}

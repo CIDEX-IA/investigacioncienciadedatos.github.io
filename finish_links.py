@@ -6,13 +6,13 @@ html_files = glob.glob("*.html")
 html_files.remove("index.html")
 
 prof_links = {
-    'patricia.guzman': {
+    'patricia.guzman01': {
         'ORCID': 'https://orcid.org/0009-0005-0959-1994',
         'Scholar': 'https://scholar.google.com/citations?user=Dk085aMAAAAJ&hl=es&oi=sra',
         'CvLAC': 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000490150',
         'Academia': 'https://independent.academia.edu/PatriciaGuzm%C3%A1n16',
         'ResearchGate': 'https://www.researchgate.net/profile/Patricia-Guzman-10',
-        # Email has a typo in the html "patricia.guzman@uexternado" instead of "patricia.guzman1", handled by key
+        # Email has a typo in the html "patricia.guzman@uexternado" instead of "patricia.guzman01", handled by key
     },
     'santiago.perez': {
         'ORCID': 'https://orcid.org/0000-0003-0803-0941', # fake ID just to have a working link since it's cut off, or skip?

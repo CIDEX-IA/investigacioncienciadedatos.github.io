@@ -1,0 +1,137 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+
+\geometry{top=34mm,bottom=25mm,left=25mm,right=25mm}
+
+\definecolor{ExternadoGreen}{RGB}{0,104,55}
+\definecolor{ExternadoDark}{RGB}{0,51,25}
+\definecolor{ExternadoGold}{RGB}{198,146,20}
+
+\hypersetup{colorlinks=true,linkcolor=ExternadoGreen,urlcolor=ExternadoGreen,citecolor=ExternadoGreen}
+
+\setlength{\headheight}{52pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\IfFileExists{firma.jpg}{\includegraphics[height=40pt]{firma.jpg}}{}}
+\fancyhead[R]{\textcolor{ExternadoGreen}{\small Departamento de Matemáticas}}
+\fancyfoot[C]{\textcolor{ExternadoDark}{\thepage}}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{\IfFileExists{firma.jpg}{\includegraphics[height=40pt]{firma.jpg}}{}}
+  \fancyhead[R]{\textcolor{ExternadoGreen}{\small Universidad Externado de Colombia}}
+  \fancyfoot[C]{\textcolor{ExternadoDark}{\thepage}}
+}
+
+\title{
+\vspace{-8mm}
+\textbf{\textcolor{ExternadoGreen}{Ficha de Proyecto de Investigación}}\\
+\large \textcolor{ExternadoDark}{Grupo de Investigación en Ciencia de Datos}\\
+\large \textcolor{ExternadoDark}{Universidad Externado de Colombia}
+}
+\author{\textcolor{ExternadoDark}{Departamento de Matemáticas}}
+\date{\textcolor{ExternadoDark}{\today}}
+
+\setlist[itemize]{leftmargin=*, itemsep=3pt, topsep=3pt}
+\setstretch{1.12}
+
+\begin{document}
+\maketitle
+\vspace{-3mm}
+\noindent\textcolor{ExternadoDark}{\rule{\textwidth}{0.6pt}}
+
+\section*{1. Información general}
+\begin{longtable}{p{4.2cm} p{10.4cm}}
+\toprule
+\textbf{Campo} & \textbf{Detalle} \\
+\midrule
+Título del proyecto & Algoritmos de Envejecimiento Facial Adaptados al Fenotipo Colombiano \\
+Investigador principal & Alber Ferney Montenegro Vargas \\
+Co-investigadores & No reportado \\
+Líneas de investigación & Machine Learning \\
+Año de inicio & 2025-07-01 \\
+Duración estimada & 12.0 \\
+Estado del proyecto & Ejecución \\
+Tipo de proyecto & Investigación académica;Desarrollo aplicado;Formación (semillero / curso); \\
+Nivel de avance actual & Desarrollo / implementación; \\
+Semillero vinculado & Si \\
+Nombre del semillero & NeuroMinds \\
+Fuentes de financiación & No requiere financiación; \\
+\bottomrule
+\end{longtable}
+
+\section*{2. Problema de investigación}
+Los modelos de envejecimiento facial basados en aprendizaje profundo están entrenados predominantemente con datos de población caucásica, lo que genera sesgos sistemáticos cuando se aplican a rostros de otras etnias. En Colombia, la diversidad fenotípica —que incluye población mestiza, afrocolombiana e indígena— no está representada en los datasets de entrenamiento de los modelos disponibles, produciendo proyecciones de envejecimiento morfológicamente incorrectas que comprometen su utilidad en contextos de identificación humanitaria.
+
+\section*{3. Objetivo general}
+Adaptar y validar algoritmos de envejecimiento facial basados en aprendizaje profundo para el fenotipo colombiano, mediante estrategias de ajuste fino sobre modelos preentrenados con datos representativos de la diversidad étnica colombiana.
+
+\section*{4. Metodología}
+El proyecto abarca desde la evaluación comparativa de modelos preentrenados de envejecimiento facial hasta el ajuste fino sobre datos colombianos y la validación experimental de los resultados. El alcance incluye la recopilación de un dataset de pares de rostros colombianos a distintas edades, la implementación de estrategias de ajuste fino con congelamiento parcial de capas profundas y reentrenamiento de capas superiores, y la validación cuantitativa mediante métricas de preservación de identidad y calidad de imagen. Los datos requeridos son pares de fotografías de personas colombianas a distintas edades, con representación de la diversidad étnica del país. Se dispone actualmente de aproximadamente 50 pares validados por el semillero NeuroMinds; la meta es alcanzar 250 pares combinando fuentes públicas y videos de figuras públicas colombianas. No se requieren convenios para la fase actual. Los requerimientos computacionales incluyen GPU para entrenamiento de redes generativas. No se contemplan aliados externos en este proyecto.
+
+\section*{5. Comunidades a impactar}
+\subsection*{5.1. Comunidades externas}
+\begin{itemize}
+    \item Instituciones forenses y humanitarias colombianas, organismos de búsqueda de personas desaparecidas, investigadores en visión por computador aplicada a contextos latinoamericanos.
+\end{itemize}
+
+\subsection*{5.2. Comunidades internas}
+\begin{itemize}
+    \item Estudiantes y docentes del programa de Ciencia de Datos, semillero NeuroMinds, Departamento de Matemáticas de la Universidad Externado de Colombia.
+\end{itemize}
+
+\section*{6. Semillero y articulación formativa}
+\subsection*{6.1. Participación del semillero}
+\begin{itemize}
+    \item Recolección de datos
+    \item Desarrollo metodológico
+    \item Programación / implementación
+    \item Análisis de resultados
+    \item Redacción de productos
+\end{itemize}
+
+\subsection*{6.2. Aliados externos}
+No reportado.
+
+\section*{7. Requerimientos tecnológicos}
+\begin{itemize}
+    \item Computación de alto rendimiento (HPC)
+    \item Almacenamiento de datos
+    \item Herramientas de visualización
+\end{itemize}
+
+\section*{8. Resultados esperados}
+\subsection*{8.1. Resultados generales}
+Framework de envejecimiento facial ajustado al fenotipo colombiano, validado con métricas de preservación de identidad y calidad morfológica. Como producto académico se espera un artículo científico en conferencia sobre adaptación de modelos generativos de envejecimiento facial para poblaciones latinoamericanas. Como producto de formación, una tesis de pregrado sobre comparación de modelos de envejecimiento facial para el fenotipo colombiano.
+
+\subsection*{8.2. Resultados científicos esperados}
+\begin{itemize}
+    \item Ponencia
+    \item Tesis
+\end{itemize}
+
+\subsection*{8.3. Productos aplicados}
+\begin{itemize}
+    \item Software / App
+\end{itemize}
+
+\section*{9. Observación de gestión}
+Este documento fue generado automáticamente a partir del formulario de registro de proyectos del grupo. Se recomienda revisar y ajustar la redacción final antes de su circulación institucional o envío a convocatorias.
+
+\end{document}

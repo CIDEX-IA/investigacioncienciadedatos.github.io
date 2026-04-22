@@ -63,7 +63,7 @@ excel_links = {
         'scholar': 'https://scholar.google.com/citations?user=... (missing full)', # Actually he has scholar in code
         'cvlac': 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001353782'
     },
-    'patricia.guzman1': {
+    'patricia.guzman01': {
         'orcid': 'https://orcid.org/my-orcid?orcid=0009-0005-0959-1994',
         'scholar': 'https://scholar.google.com/citations?user=Dk085aMAAAAJ&hl=es&oi=sra',
         'cvlac': 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000490150',

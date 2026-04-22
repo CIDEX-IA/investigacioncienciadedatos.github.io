@@ -41,7 +41,7 @@ for f in html_files:
                             prof_links[ident][name] = href
 
 # 2. Update Patricia from what I can see in the image to be safe
-prof_links['patricia.guzman1'] = {
+prof_links['patricia.guzman01'] = {
     'ORCID': 'https://orcid.org/my-orcid?orcid=0009-0005-0959-1994',
     'Scholar': 'https://scholar.google.com/citations?user=Dk085aMAAAAJ&hl=es',
     'CvLAC': 'https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000490150',

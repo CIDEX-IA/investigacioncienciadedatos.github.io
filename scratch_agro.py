@@ -137,7 +137,7 @@ def generate_html():
                         <p>Abogada y administradora, magíster en análisis regional y Doctora (PhD) en Derecho.</p>
                         
                         <div class="prof-email">
-                            <a href="mailto:patricia.guzman@uexternado.edu.co">patricia.guzman@uexternado.edu.co</a>
+                            <a href="mailto:patricia.guzman01@uexternado.edu.co">patricia.guzman01@uexternado.edu.co</a>
                         </div>
                         <div class="prof-links">
                             <a href="#" target="_blank">ORCID</a>

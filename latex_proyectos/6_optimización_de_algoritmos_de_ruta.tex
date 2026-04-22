@@ -1,0 +1,133 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+
+\geometry{top=34mm,bottom=25mm,left=25mm,right=25mm}
+
+\definecolor{ExternadoGreen}{RGB}{0,104,55}
+\definecolor{ExternadoDark}{RGB}{0,51,25}
+\definecolor{ExternadoGold}{RGB}{198,146,20}
+
+\hypersetup{colorlinks=true,linkcolor=ExternadoGreen,urlcolor=ExternadoGreen,citecolor=ExternadoGreen}
+
+\setlength{\headheight}{52pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\IfFileExists{firma.jpg}{\includegraphics[height=40pt]{firma.jpg}}{}}
+\fancyhead[R]{\textcolor{ExternadoGreen}{\small Departamento de Matemáticas}}
+\fancyfoot[C]{\textcolor{ExternadoDark}{\thepage}}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{\IfFileExists{firma.jpg}{\includegraphics[height=40pt]{firma.jpg}}{}}
+  \fancyhead[R]{\textcolor{ExternadoGreen}{\small Universidad Externado de Colombia}}
+  \fancyfoot[C]{\textcolor{ExternadoDark}{\thepage}}
+}
+
+\title{
+\vspace{-8mm}
+\textbf{\textcolor{ExternadoGreen}{Ficha de Proyecto de Investigación}}\\
+\large \textcolor{ExternadoDark}{Grupo de Investigación en Ciencia de Datos}\\
+\large \textcolor{ExternadoDark}{Universidad Externado de Colombia}
+}
+\author{\textcolor{ExternadoDark}{Departamento de Matemáticas}}
+\date{\textcolor{ExternadoDark}{\today}}
+
+\setlist[itemize]{leftmargin=*, itemsep=3pt, topsep=3pt}
+\setstretch{1.12}
+
+\begin{document}
+\maketitle
+\vspace{-3mm}
+\noindent\textcolor{ExternadoDark}{\rule{\textwidth}{0.6pt}}
+
+\section*{1. Información general}
+\begin{longtable}{p{4.2cm} p{10.4cm}}
+\toprule
+\textbf{Campo} & \textbf{Detalle} \\
+\midrule
+Título del proyecto & Optimización de algoritmos de ruta \\
+Investigador principal & David Andrés Franco Quintero \\
+Co-investigadores & No reportado \\
+Líneas de investigación & Modelado Matemático, Machine Learning \\
+Año de inicio & 2024-04-01 \\
+Duración estimada & No reportado. \\
+Estado del proyecto & Formulación \\
+Tipo de proyecto & Consultoría / transferencia; \\
+Nivel de avance actual & Idea inicial; \\
+Semillero vinculado & No \\
+Nombre del semillero & No aplica \\
+Fuentes de financiación & No requiere financiación; \\
+\bottomrule
+\end{longtable}
+
+\section*{2. Problema de investigación}
+¿Cómo rediseñar el esquema de rutas de Transmilenio teniendo presente la inclusión de nuevos factores como la Línea 1 del Metro y la troncal Av. 68, con el fin de generar eficiencias en el sistema?
+
+\section*{3. Objetivo general}
+Especificar un conjunto nuevo de rutas que deben implementarse en el sistema Transmilenio a fin de optimizar los trayectos hechos por los usuarios.
+
+\section*{4. Metodología}
+Alcance del proyecto: proposición de esquema de rutas nuevas en Transmilenio. Necesidad de información: datos de validación de usuarios, datos de rutas que paran actualmente, datos de estaciones actuales y futuras. Estas son obtenidas de los datos públicos de Transmilenio. Fuentes de información: Datos Abiertos de Transmilenio. Estrategias de acceso de datos: bases institucionales. Aliados externos: escucha de la propuesta de cambio de rutas, mostrando la eficiencia generada con ello.
+
+\section*{5. Comunidades a impactar}
+\subsection*{5.1. Comunidades externas}
+\begin{itemize}
+    \item Población usuaria de Transmilenio Ciudadano común que usa Transporte Público Sistema Integrado de Transporte Público de Bogotá
+\end{itemize}
+
+\subsection*{5.2. Comunidades internas}
+No reportado.
+
+\section*{6. Semillero y articulación formativa}
+\subsection*{6.1. Participación del semillero}
+\begin{itemize}
+    \item Recolección de datos
+    \item Desarrollo metodológico
+    \item Programación / implementación
+    \item Análisis de resultados
+    \item Redacción de productos
+\end{itemize}
+
+\subsection*{6.2. Aliados externos}
+No reportado.
+
+\section*{7. Requerimientos tecnológicos}
+\begin{itemize}
+    \item Herramientas de visualización
+    \item Computación de alto rendimiento (HPC)
+\end{itemize}
+
+\section*{8. Resultados esperados}
+\subsection*{8.1. Resultados generales}
+- Análisis actual del componente Transmilenio en términos de tiempo de desplazamiento. - Análisis del componente Transmilenio (en términos de tiempo de desplazamiento) con las rutas actuales y asumiendo una entrada de la Linea 1 del Metro y la troncal Av. 68. - - Análisis del componente Transmilenio (en términos de tiempo de desplazamiento) con un nuevo sistema de rutas y asumiendo una entrada de la Linea 1 del Metro y la troncal Av. 68.
+
+\subsection*{8.2. Resultados científicos esperados}
+\begin{itemize}
+    \item Artículo científico
+\end{itemize}
+
+\subsection*{8.3. Productos aplicados}
+\begin{itemize}
+    \item Ruteo del componente Transmilenio
+\end{itemize}
+
+\section*{9. Observación de gestión}
+Este documento fue generado automáticamente a partir del formulario de registro de proyectos del grupo. Se recomienda revisar y ajustar la redacción final antes de su circulación institucional o envío a convocatorias.
+
+\end{document}

@@ -1,0 +1,137 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+
+\geometry{top=34mm,bottom=25mm,left=25mm,right=25mm}
+
+\definecolor{ExternadoGreen}{RGB}{0,104,55}
+\definecolor{ExternadoDark}{RGB}{0,51,25}
+\definecolor{ExternadoGold}{RGB}{198,146,20}
+
+\hypersetup{colorlinks=true,linkcolor=ExternadoGreen,urlcolor=ExternadoGreen,citecolor=ExternadoGreen}
+
+\setlength{\headheight}{52pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\IfFileExists{firma.jpg}{\includegraphics[height=40pt]{firma.jpg}}{}}
+\fancyhead[R]{\textcolor{ExternadoGreen}{\small Departamento de Matemáticas}}
+\fancyfoot[C]{\textcolor{ExternadoDark}{\thepage}}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[L]{\IfFileExists{firma.jpg}{\includegraphics[height=40pt]{firma.jpg}}{}}
+  \fancyhead[R]{\textcolor{ExternadoGreen}{\small Universidad Externado de Colombia}}
+  \fancyfoot[C]{\textcolor{ExternadoDark}{\thepage}}
+}
+
+\title{
+\vspace{-8mm}
+\textbf{\textcolor{ExternadoGreen}{Ficha de Proyecto de Investigación}}\\
+\large \textcolor{ExternadoDark}{Grupo de Investigación en Ciencia de Datos}\\
+\large \textcolor{ExternadoDark}{Universidad Externado de Colombia}
+}
+\author{\textcolor{ExternadoDark}{Departamento de Matemáticas}}
+\date{\textcolor{ExternadoDark}{\today}}
+
+\setlist[itemize]{leftmargin=*, itemsep=3pt, topsep=3pt}
+\setstretch{1.12}
+
+\begin{document}
+\maketitle
+\vspace{-3mm}
+\noindent\textcolor{ExternadoDark}{\rule{\textwidth}{0.6pt}}
+
+\section*{1. Información general}
+\begin{longtable}{p{4.2cm} p{10.4cm}}
+\toprule
+\textbf{Campo} & \textbf{Detalle} \\
+\midrule
+Título del proyecto & Reconstrucción Craneofacial Tridimensional Forense con Herramientas Abiertas \\
+Investigador principal & Alber Ferney Montenegro Vargas \\
+Co-investigadores & No reportado \\
+Líneas de investigación & Modelado Matemático, Gestión del Conocimeinto \\
+Año de inicio & 2026-04-01 \\
+Duración estimada & 18.0 \\
+Estado del proyecto & Formulación \\
+Tipo de proyecto & Investigación académica;Desarrollo aplicado; \\
+Nivel de avance actual & Diseño metodológico; \\
+Semillero vinculado & Si \\
+Nombre del semillero & NeuroMInds \\
+Fuentes de financiación & No requiere financiación; \\
+\bottomrule
+\end{longtable}
+
+\section*{2. Problema de investigación}
+La reconstrucción facial forense a partir de cráneos es un proceso que actualmente depende en gran medida de herramientas comerciales costosas y de alta especialización técnica, lo que limita su accesibilidad en contextos forenses con recursos limitados. Los métodos computacionales existentes están desarrollados principalmente para poblaciones europeas o norteamericanas, careciendo de validación para poblaciones latinoamericanas, y no existe un pipeline reproducible, modular y de código abierto que integre la estimación del perfil biológico, la colocación de landmarks anatómicos y la deformación facial guiada por tablas de grosor de tejidos blandos.
+
+\section*{3. Objetivo general}
+Desarrollar un pipeline computacional de código abierto para la reconstrucción facial forense tridimensional a partir de cráneos, que integre la estimación del perfil biológico, la colocación de landmarks anatómicos y la deformación de una plantilla facial mediante splines de placa delgada, implementado con herramientas de acceso libre.
+
+\section*{4. Metodología}
+El proyecto abarca desde el diseño del pipeline hasta la implementación de un prototipo funcional y su validación experimental. El alcance incluye procesamiento de imágenes DICOM para generación de mallas 3D, desarrollo de un módulo de colocación de landmarks anatómicos en Blender, estimación del perfil biológico (sexo, edad, ancestría) a partir de características craneales, selección de tablas de grosor de tejidos blandos según perfil estimado, y deformación de una plantilla facial mediante Thin Plate Splines. Los datos requeridos son tomografías computarizadas de cráneos con perfil biológico conocido. Las fuentes de datos incluyen repositorios de tomografías disponibles para investigación y colaboraciones con instituciones forenses. Los requerimientos computacionales son moderados y se cubren con infraestructura disponible. No se contemplan aliados externos en este proyecto en su fase académica.
+
+\section*{5. Comunidades a impactar}
+\subsection*{5.1. Comunidades externas}
+\begin{itemize}
+    \item Instituciones forenses colombianas, investigadores en antropología forense, organismos de identificación de personas en contextos humanitarios, laboratorios de medicina legal.
+\end{itemize}
+
+\subsection*{5.2. Comunidades internas}
+\begin{itemize}
+    \item Estudiantes y docentes del programa de Ciencia de Datos, semillero NeuroMinds, Departamento de Matemáticas de la Universidad Externado de Colombia.
+\end{itemize}
+
+\section*{6. Semillero y articulación formativa}
+\subsection*{6.1. Participación del semillero}
+\begin{itemize}
+    \item Desarrollo metodológico
+    \item Programación / implementación
+    \item Análisis de resultados
+    \item Redacción de productos
+\end{itemize}
+
+\subsection*{6.2. Aliados externos}
+No reportado.
+
+\section*{7. Requerimientos tecnológicos}
+\begin{itemize}
+    \item Computación de alto rendimiento (HPC)
+    \item Almacenamiento de datos
+    \item Herramientas de visualización
+\end{itemize}
+
+\section*{8. Resultados esperados}
+\subsection*{8.1. Resultados generales}
+Prototipo funcional de pipeline de reconstrucción craneofacial 3D con herramientas de código abierto, validado con casos de prueba. Como producto académico se espera una ponencia en congreso internacional de informática forense o visión por computador. Como producto de formación, una tesis de pregrado sobre implementación de sistemas de reconstrucción facial forense tridimensional con herramientas abiertas.
+
+\subsection*{8.2. Resultados científicos esperados}
+\begin{itemize}
+    \item Ponencia
+    \item Artículo científico
+\end{itemize}
+
+\subsection*{8.3. Productos aplicados}
+\begin{itemize}
+    \item Software / App
+    \item Prototipo
+\end{itemize}
+
+\section*{9. Observación de gestión}
+Este documento fue generado automáticamente a partir del formulario de registro de proyectos del grupo. Se recomienda revisar y ajustar la redacción final antes de su circulación institucional o envío a convocatorias.
+
+\end{document}
